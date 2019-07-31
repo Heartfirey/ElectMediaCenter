@@ -13,22 +13,21 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="467*"/>
             <ColumnDefinition Width="153*"/>
-
         </Grid.ColumnDefinitions>
-        <GroupBox Header="课件索引区" HorizontalAlignment="Left" Height="86" Margin="10,109,0,0" VerticalAlignment="Top" Width="448"/>
+        <GroupBox Header="课件索引区"  HorizontalAlignment="Left" Height="97" Margin="10,98,0,0" VerticalAlignment="Top" Width="448" />
         <Label Content="WeiFang Middle School" HorizontalAlignment="Left" Height="34" Margin="10,10,0,0" VerticalAlignment="Top" Width="202" FontSize="16"/>
         <Label Content="2017级21班电子多媒体索引系统" HorizontalAlignment="Left" Height="34" Margin="10,34,0,0" VerticalAlignment="Top" Width="251" FontSize="14"/>
-        <Label Content="检测机制未编写/不可用" HorizontalAlignment="Left" Height="36" Margin="51,73,0,0" VerticalAlignment="Top" Width="237" Cursor="ScrollS" FontFamily="Century Gothic" FontWeight="Bold" FontSize="11"/>
-        <Button Content="数学" HorizontalAlignment="Left" Height="53" Margin="18,131,0,0" VerticalAlignment="Top" Width="60" Click="StartMath"/>
-        <Button Content="语文" HorizontalAlignment="Left" Height="53" Margin="90,131,0,0" VerticalAlignment="Top" Width="60"/>
-        <Button Content="英语" HorizontalAlignment="Left" Height="53" Margin="164,131,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.921,0.519"/>
-        <Button Content="物理" HorizontalAlignment="Left" Height="53" Margin="238,131,0,0" VerticalAlignment="Top" Width="60"/>
-        <Button Content="化学" HorizontalAlignment="Left" Height="53" Margin="314,131,0,0" VerticalAlignment="Top" Width="60"/>
-        <Button Content="生物" Margin="387,131,0,0" HorizontalAlignment="Left" Width="60" Height="53" VerticalAlignment="Top"/>
+        <Label Content="检测机制未编写/不可用" HorizontalAlignment="Left" Height="36" Margin="51,65,0,0" VerticalAlignment="Top" Width="237" Cursor="ScrollS" FontFamily="Century Gothic" FontWeight="Bold" FontSize="11"/>
+        <Button Content="数学" HorizontalAlignment="Left" Height="53" Margin="18,137,0,0" VerticalAlignment="Top" Width="60" Click="StartMath" Background="#FFEB3B" BorderBrush="#FFEB3B"/>
+        <Button Content="语文" HorizontalAlignment="Left" Height="53" Margin="91,136,0,0" VerticalAlignment="Top" Width="60" Background="#E53935" BorderBrush="#E53935"/>
+        <Button Content="英语" HorizontalAlignment="Left" Height="53" Margin="164,136,0,0" VerticalAlignment="Top" Width="60" Background="#2196F3" BorderBrush="#2196F3"/>
+        <Button Content="物理" HorizontalAlignment="Left" Height="53" Margin="239,136,0,0" VerticalAlignment="Top" Width="60" Background="#CDDC39" BorderBrush="#CDDC39"/>
+        <Button Content="化学" HorizontalAlignment="Left" Height="53" Margin="317,136,0,0" VerticalAlignment="Top" Width="60" Background="#FFA000" BorderBrush="#FFA000"/>
+        <Button Content="生物" Margin="389,136,0,0" HorizontalAlignment="Left" Width="60" Height="53" VerticalAlignment="Top" Background="#795548" BorderBrush="#795548"/>
         <GroupBox Header="功能区" HorizontalAlignment="Left" Height="177" Margin="22,18,0,0" VerticalAlignment="Top" Width="114" Grid.Column="1"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Height="23" Margin="45,75,0,0" VerticalAlignment="Top" Width="69" Grid.Column="1" Click="W_Close"/>
-        <Button x:Name="shutdownbtn" Content="Shutdown" HorizontalAlignment="Left" Height="23" Margin="45,45,0,0" VerticalAlignment="Top" Width="68" Grid.Column="1" Click="shutdown"/>
-        <Image Margin="18,68,0,0" Source="112.jpg" Stretch="Fill" HorizontalAlignment="Left" Width="28" Height="30" VerticalAlignment="Top"/>
-        <Button Content="Settings" HorizontalAlignment="Left" Height="23" Margin="45,106,0,0" VerticalAlignment="Top" Width="69" Grid.Column="1" Click="Boot_SettingWindows"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Height="23" Margin="45,109,0,0" VerticalAlignment="Top" Width="81.925" Grid.Column="1" Click="W_Close" FontSize="10" Background="#FF9800" BorderBrush="#FF9800"/>
+        <Button x:Name="shutdownbtn" Content="Shutdown" HorizontalAlignment="Left" Height="23" Margin="45,73,0,0" VerticalAlignment="Top" Width="81.925" Grid.Column="1" Click="shutdown" FontSize="10" Background="#9C27B0" BorderBrush="#9C27B0"/>
+        <Image Margin="18,62,0,0" Source="112.jpg" Stretch="Fill" HorizontalAlignment="Left" Width="28" Height="30" VerticalAlignment="Top"/>
+        <Button Content="Settings" HorizontalAlignment="Left" Height="23" Margin="45,145,0,0" VerticalAlignment="Top" Width="81.925" Grid.Column="1" Click="Boot_SettingWindows" FontSize="10" Background="#00BCD4" BorderBrush="#00BCD4"/>
     </Grid>
 </Window>

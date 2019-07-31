@@ -1,0 +1,25 @@
+﻿<Window x:Class="ElectMediaCenter_Project.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElectMediaCenter_Project"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="SettingWindows" Height="285.659" Width="832.306">
+    <Grid Margin="0,0,16,-60">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="494*"/>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="159*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:Card Padding="16" Margin="16,16,16,0" Grid.ColumnSpan="3">
+            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">ElectMediaCenter Insider Preview Version：Build 19.731</TextBlock>
+        </materialDesign:Card>
+
+        <Image HorizontalAlignment="Left" Height="136" Margin="0,84,0,0" VerticalAlignment="Top" Width="160" Source="Computer.png"/>
+        <Label Content="Insider Preview Version 2019.7.31&#xD;&#xA;下一版本：1.全新Material Design界面设计 2.自义定操作按钮文本及指向目录" HorizontalAlignment="Right" Margin="0,0,92,169" Width="556" FontFamily="Yu Gothic UI Light" FontSize="16" Height="56" VerticalAlignment="Bottom" Grid.ColumnSpan="3"/>
+        <Label Content="Features：1.优化启动速度 2.界面布局重写" HorizontalAlignment="Left" Margin="165,161,0,154" Width="382" FontFamily="KaiTi_GB2312" FontSize="14" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>

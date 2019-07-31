@@ -56,7 +56,8 @@ namespace ElectMediaCenter_Project
         public MainWindow()
         {
             InitializeComponent();
-        }  
+        }
+        
         //功能封装函数_关机指令
         private void shutdown(object sender, RoutedEventArgs e)
         {
@@ -90,7 +91,7 @@ namespace ElectMediaCenter_Project
         //功能封装函数_引导设置窗口
         private void Boot_SettingWindows(object sender, RoutedEventArgs e)
         {
-            SettingWindows f2 = new SettingWindows();
+            Settings f2 = new Settings();
             f2.Show();
         }
 
@@ -112,7 +113,7 @@ namespace ElectMediaCenter_Project
             System.Diagnostics.Process.Start(@"C:/");
         }
     }
+    
 
-   
 }
 
