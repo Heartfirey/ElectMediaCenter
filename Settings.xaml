@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:ElectMediaCenter_Project"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="SettingWindows" Height="285.659" Width="832.306">
-    <Grid Margin="0,0,16,-60">
+        Title="Settings" Height="276.289" Width="800">
+    <Grid Margin="0,0,0,1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="494*"/>
             <ColumnDefinition Width="155*"/>
@@ -17,9 +17,10 @@
             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">ElectMediaCenter Insider Preview Version：Build 19.731</TextBlock>
         </materialDesign:Card>
 
-        <Image HorizontalAlignment="Left" Height="136" Margin="0,84,0,0" VerticalAlignment="Top" Width="160" Source="Computer.png"/>
-        <Label Content="Insider Preview Version 2019.7.31&#xD;&#xA;下一版本：1.全新Material Design界面设计 2.自义定操作按钮文本及指向目录" HorizontalAlignment="Right" Margin="0,0,92,169" Width="556" FontFamily="Yu Gothic UI Light" FontSize="16" Height="56" VerticalAlignment="Bottom" Grid.ColumnSpan="3"/>
+        <Image HorizontalAlignment="Left" Height="136" Margin="23,91,0,0" VerticalAlignment="Top" Width="160" Source="Computer.png"/>
+        <Label Content="Insider Preview Version 2019.7.31&#xD;&#xA;下一版本：1.全新Material Design界面设计 2.自义定操作按钮文本及指向目录" HorizontalAlignment="Right" Margin="0,0,48,88" Width="556" FontFamily="Yu Gothic UI Light" FontSize="16" Height="56" VerticalAlignment="Bottom" Grid.ColumnSpan="3"/>
         <Label Content="Features：1.优化启动速度 2.界面布局重写" HorizontalAlignment="Left" Margin="165,161,0,154" Width="382" FontFamily="KaiTi_GB2312" FontSize="14" Grid.ColumnSpan="2"/>
+        <Button Content="访问GitHub项目主页" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="85,196,0,0" VerticalAlignment="Top" Width="194" Grid.ColumnSpan="2" Background="RoyalBlue" BorderBrush="RoyalBlue" Click="Visit_ProjectWeb"/>
 
     </Grid>
 </Window>

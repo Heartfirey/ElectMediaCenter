@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ElectMediaCenter_Project"
         mc:Ignorable="d"
-        Title=".net framework project emc" Height="235.5" Width="629.75" WindowStartupLocation="CenterScreen">
+        Title=".net framework project emc" Height="238.223" Width="629.75" WindowStartupLocation="CenterScreen">
     <Window.TaskbarItemInfo>
         <TaskbarItemInfo/>
     </Window.TaskbarItemInfo>
@@ -28,6 +28,6 @@
         <Button Content="Exit" HorizontalAlignment="Left" Height="23" Margin="45,109,0,0" VerticalAlignment="Top" Width="81.925" Grid.Column="1" Click="W_Close" FontSize="10" Background="#FF9800" BorderBrush="#FF9800"/>
         <Button x:Name="shutdownbtn" Content="Shutdown" HorizontalAlignment="Left" Height="23" Margin="45,73,0,0" VerticalAlignment="Top" Width="81.925" Grid.Column="1" Click="shutdown" FontSize="10" Background="#9C27B0" BorderBrush="#9C27B0"/>
         <Image Margin="18,62,0,0" Source="112.jpg" Stretch="Fill" HorizontalAlignment="Left" Width="28" Height="30" VerticalAlignment="Top"/>
-        <Button Content="Settings" HorizontalAlignment="Left" Height="23" Margin="45,145,0,0" VerticalAlignment="Top" Width="81.925" Grid.Column="1" Click="Boot_SettingWindows" FontSize="10" Background="#00BCD4" BorderBrush="#00BCD4"/>
+        <Button Content="Settings" HorizontalAlignment="Left" Height="23" Margin="45,145,0,0" VerticalAlignment="Top" Width="81.925" Grid.Column="1"  FontSize="10" Background="#00BCD4" BorderBrush="#00BCD4" Click="Boot_SettingWindows" />
     </Grid>
 </Window>
