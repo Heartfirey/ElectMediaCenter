@@ -13,5 +13,14 @@ namespace ElectMediaCenter_Project
     /// </summary>
     public partial class App : Application
     {
+        class FileLocationStorage //用于全局储存课件的目录
+        {
+            string MathFileLoc;
+            string ChineseFileLoc;
+            string EnglishFileLoc;
+            string PhysicalFileLoc;
+            string ChemistryFileloc;
+            string BiologyFileLoc;
+        }
     }
 }
