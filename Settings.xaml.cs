@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace ElectMediaCenter_Project
@@ -12,6 +13,7 @@ namespace ElectMediaCenter_Project
         public Settings()
         {
             InitializeComponent();
+            ConfigRead();
         }
     }
 
@@ -81,6 +83,35 @@ namespace ElectMediaCenter_Project
             {
                 BiologyBox.Text = openFileDialog.SelectedPath;
             }
+        }
+
+        private void ConfigSave(object sender, RoutedEventArgs e)
+        {
+
+            Storage.FileLocationStorage.MathFileLoc = MathBox.Text;
+            Storage.FileLocationStorage.ChineseFileLoc = ChineseBox.Text;
+            Storage.FileLocationStorage.EnglishFileLoc = EnglishBox.Text;
+            Storage.FileLocationStorage.PhysicalFileLoc = PhysicalBox.Text;
+            Storage.FileLocationStorage.ChemistryFileLoc = ChemistryBox.Text;
+            Storage.FileLocationStorage.BiologyFileLoc = BiologyBox.Text;
+
+            IniFiles ini = new IniFiles(Directory.GetCurrentDirectory() + "\\Settings.ini");
+            ini.IniWriteValue("SettingList", "MathFileLoc", Storage.FileLocationStorage.MathFileLoc);
+            ini.IniWriteValue("SettingList", "ChineseFileLoc", Storage.FileLocationStorage.ChineseFileLoc);
+            ini.IniWriteValue("SettingList", "EnglishFileLoc", Storage.FileLocationStorage.EnglishFileLoc);
+            ini.IniWriteValue("SettingList", "PhysicalFileLoc", Storage.FileLocationStorage.PhysicalFileLoc);
+            ini.IniWriteValue("SettingList", "ChemistryFileloc", Storage.FileLocationStorage.ChemistryFileLoc);
+            ini.IniWriteValue("SettingList", "BiologyFileLoc", Storage.FileLocationStorage.BiologyFileLoc);
+        }
+
+        private void ConfigRead()
+        {
+            MathBox.Text = Storage.FileLocationStorage.MathFileLoc;
+            ChineseBox.Text = Storage.FileLocationStorage.ChineseFileLoc;
+            EnglishBox.Text = Storage.FileLocationStorage.EnglishFileLoc;
+            PhysicalBox.Text = Storage.FileLocationStorage.PhysicalFileLoc;
+            ChemistryBox.Text = Storage.FileLocationStorage.ChemistryFileLoc;
+            BiologyBox.Text = Storage.FileLocationStorage.BiologyFileLoc;
         }
     }
 }

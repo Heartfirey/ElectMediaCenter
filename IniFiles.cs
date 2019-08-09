@@ -20,7 +20,7 @@ namespace ElectMediaCenter_Project
         /// <summary> 
         /// 构造方法 
         /// </summary> 
-        /// <param name="INIPath">文件路径</param> 
+        /// <param name="INIPath">Process.GetCurrentProcess().MainModule.FileName + "Settings.ini"</param> 
         public IniFiles(string INIPath)
         {
             inipath = INIPath;
@@ -59,3 +59,4 @@ namespace ElectMediaCenter_Project
         }
     }
 }
+

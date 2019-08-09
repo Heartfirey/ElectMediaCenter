@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using System.Data;
 using System.Drawing;
 using System.Diagnostics;
-
+using System.IO;
 
 namespace ElectMediaCenter_Project
 {
@@ -25,37 +25,39 @@ namespace ElectMediaCenter_Project
     /// </summary>
     public partial class FileLocation : Window
     {
-        public string temp_Mathloc;
-        public string temp_Chineseloc;
-        public string temp_Englishloc;
-        public string temp_Physicloc;
-        public string temp_Chemistryloc;
-        public string temp_Biologyloc;
+        
 
-        IniFiles ini = new IniFiles(Process.GetCurrentProcess().MainModule.FileName + "Settings.ini");
         public void read()
         {
+            IniFiles ini = new IniFiles(Directory.GetCurrentDirectory() + "\\Settings.ini");
+            
             if (ini.ExistINIFile())
             {
-                temp_Mathloc = ini.IniReadValue("SettingList", "数学");
-                temp_Mathloc = ini.IniReadValue("SettingList", "语文");
-                temp_Mathloc = ini.IniReadValue("SettingList", "英语");
-                temp_Mathloc = ini.IniReadValue("SettingList", "物理");
-                temp_Mathloc = ini.IniReadValue("SettingList", "化学");
-                temp_Mathloc = ini.IniReadValue("SettingList", "生物");
+                Storage.FileLocationStorage.MathFileLoc = ini.IniReadValue("SettingList", "MathFileLoc");
+                Storage.FileLocationStorage.ChineseFileLoc = ini.IniReadValue("SettingList", "ChineseFileLoc");
+                Storage.FileLocationStorage.EnglishFileLoc = ini.IniReadValue("SettingList", "EnglishFileLoc");
+                Storage.FileLocationStorage.PhysicalFileLoc = ini.IniReadValue("SettingList", "PhysicalFileLoc");
+                Storage.FileLocationStorage.ChemistryFileLoc = ini.IniReadValue("SettingList", "ChemistryFileloc");
+                Storage.FileLocationStorage.BiologyFileLoc = ini.IniReadValue("SettingList", "BiologyFileLoc");
+                
             }
             else
             {
-                MessageBox.Show("配置错误", "未检索到配置文件", MessageBoxButton.OK);
+                MessageBox.Show("配置错误", "未检索到配置文件,请联系管理员申请配置", MessageBoxButton.OK);
             }
         }
     }
+
     public partial class MainWindow : Window
     {
+       
+
         //主窗口声明
         public MainWindow()
         {
             InitializeComponent();
+            FileLocation FileLoc = new FileLocation();
+            FileLoc.read();
         }
         
         //功能封装函数_关机指令
@@ -83,11 +85,13 @@ namespace ElectMediaCenter_Project
                 MessageBox.Show(ex.Message + "120s shutdown_test already！");
             }
         }
+
         //功能封装函数_关闭窗口
         private void W_Close(object sender, RoutedEventArgs e)
         {
             System.Environment.Exit(0);
         }
+
         //功能封装函数_引导设置窗口
         private void Boot_SettingWindows(object sender, RoutedEventArgs e)
         {
@@ -95,22 +99,40 @@ namespace ElectMediaCenter_Project
             f2.Show();
         }
 
-        
+
 
         //索引函数
         //函数用法 System.Diagnostics.Process.Start(路径);
-        FileLocation temp_Mathloc = new FileLocation();
-        FileLocation temp_Chineseloc = new FileLocation();
-        FileLocation temp_Englishloc = new FileLocation();
-        FileLocation temp_Physicloc = new FileLocation();
-        FileLocation temp_Chemistryloc = new FileLocation();
-        FileLocation temp_Biologyloc = new FileLocation();
-
-
-
+        
+       
         private void StartMath(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:/");
+            System.Diagnostics.Process.Start(Storage.FileLocationStorage.MathFileLoc);
+        }
+
+        private void StartChinese(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Storage.FileLocationStorage.ChineseFileLoc);
+        }
+
+        private void StartEnglish(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Storage.FileLocationStorage.EnglishFileLoc);
+        }
+
+        private void StartPhysical(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Storage.FileLocationStorage.PhysicalFileLoc);
+        }
+
+        private void StartChemistry(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Storage.FileLocationStorage.ChemistryFileLoc);
+        }
+
+        private void StartBiology(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Storage.FileLocationStorage.BiologyFileLoc);
         }
     }
     

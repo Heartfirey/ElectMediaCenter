@@ -7,33 +7,41 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MaterialDesignThemes.Wpf" x:Class="ElectMediaCenter_Project.MainWindow"
         mc:Ignorable="d"
-        Title=".net framework project emc" Height="236.223" Width="687.75" WindowStartupLocation="CenterScreen">
+        Title=".net framework project emc" Height="322.223" Width="897.75" WindowStartupLocation="CenterScreen">
     <Window.TaskbarItemInfo>
         <TaskbarItemInfo/>
     </Window.TaskbarItemInfo>
     <Grid Margin="0,0,2,2">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="467*"/>
-            <ColumnDefinition Width="153*"/>
+            <ColumnDefinition Width="235*"/>
+            <ColumnDefinition Width="61*"/>
         </Grid.ColumnDefinitions>
-        <GroupBox Style="{x:Null}" Header="课件索引区"  HorizontalAlignment="Left" Height="83" Margin="10,114,0,0" VerticalAlignment="Top" Width="448" FontFamily="./#Product Sans"/>
-        <Label Style="{DynamicResource MaterialDesignLabel}" Content="检测机制未编写/不可用" HorizontalAlignment="Left" Height="27" Margin="44,82.497,0,0" VerticalAlignment="Top" Width="237" Cursor="ScrollS" FontFamily="Century Gothic" FontWeight="Bold" FontSize="11"/>
-        <Button Content="数学" HorizontalAlignment="Left" Height="53" Margin="18,136,0,0" VerticalAlignment="Top" Width="60" Click="StartMath" Background="#FDD835" BorderBrush="#FDD835"/>
-        <Button Content="语文" HorizontalAlignment="Left" Height="53" Margin="91,136,0,0" VerticalAlignment="Top" Width="60" Background="#E53935" BorderBrush="#E53935"/>
-        <Button Content="英语" HorizontalAlignment="Left" Height="53" Margin="164,136,0,0" VerticalAlignment="Top" Width="60" Background="#2196F3" BorderBrush="#2196F3"/>
-        <Button Content="物理" HorizontalAlignment="Left" Height="53" Margin="239,136,0,0" VerticalAlignment="Top" Width="60" Background="#CDDC39" BorderBrush="#CDDC39"/>
-        <Button Content="化学" HorizontalAlignment="Left" Height="53" Margin="317,136,0,0" VerticalAlignment="Top" Width="60" Background="#FFA000" BorderBrush="#FFA000"/>
-        <Button Content="生物" Margin="389,136,0,0" HorizontalAlignment="Left" Width="60" Height="53" VerticalAlignment="Top" Background="#795548" BorderBrush="#795548"/>
-        <GroupBox Style="{x:Null}" Header="功能区" HorizontalAlignment="Left" Height="177" Margin="22,18,0,0" VerticalAlignment="Top" Width="114" Grid.Column="1"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Height="23" Margin="45,69,0,0" VerticalAlignment="Top" Width="82" Grid.Column="1" Click="W_Close" FontSize="10" Background="#FF9800" BorderBrush="#FF9800"/>
-        <Button x:Name="shutdownbtn" Content="Shutdown" HorizontalAlignment="Left" Height="23" Margin="45,34,0,0" VerticalAlignment="Top" Width="82" Grid.Column="1" Click="shutdown" FontSize="10" Background="#9C27B0" BorderBrush="#9C27B0"/>
-        <Image Margin="19.82,83.407,0,0" Source="Image/112.jpg" Stretch="Fill" HorizontalAlignment="Left" Width="21" Height="23" VerticalAlignment="Top" RenderTransformOrigin="0.17,0.269"/>
-        <Button Content="Settings" HorizontalAlignment="Left" Height="23" Margin="45,99,0,0" VerticalAlignment="Top" Width="82" Grid.Column="1"  FontSize="10" Background="#00BCD4" BorderBrush="#00BCD4" Click="Boot_SettingWindows" />
-        <materialDesign:Card Padding="12" Margin="14,12.319,0,0" Height="58.808">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" FontFamily="Microsoft YaHei UI Light"><Run FontSize="16" Text="WeiFang Middle School" FontFamily="./#Product Sans"/><LineBreak/><Run FontSize="12" Text="2017级21班电子多媒体索引系统_基于.net Framework构建的测试版"/></TextBlock>
+        <GroupBox Style="{x:Null}" Header="课件索引区"  HorizontalAlignment="Left" Height="131" Margin="10,148,0,0" VerticalAlignment="Top" Width="669" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" RenderTransformOrigin="0.5,0.5" FontSize="20">
+            <GroupBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.171"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.997"/>
+                </TransformGroup>
+            </GroupBox.RenderTransform>
+        </GroupBox>
+        <Label Style="{DynamicResource MaterialDesignLabel}" Content="检测机制未编写/不可用" HorizontalAlignment="Left" Height="27" Margin="50,99,0,0" VerticalAlignment="Top" Width="237" Cursor="ScrollS" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
+        <Button Content="数学" HorizontalAlignment="Left" Height="89" Margin="20,179,0,0" VerticalAlignment="Top" Width="95" Click="StartMath" Background="#FDD835" BorderBrush="#FDD835" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
+        <Button Content="语文" HorizontalAlignment="Left" Height="89" Margin="130,179,0,0" VerticalAlignment="Top" Width="95" Click="StartChinese" Background="#E53935" BorderBrush="#E53935" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
+        <Button Content="英语" HorizontalAlignment="Left" Height="89" Margin="240,179,0,0" VerticalAlignment="Top" Width="95" Click="StartEnglish" Background="#2196F3" BorderBrush="#2196F3" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
+        <Button Content="物理" HorizontalAlignment="Left" Height="89" Margin="350,179,0,0" VerticalAlignment="Top" Width="95" Click="StartPhysical" Background="#CDDC39" BorderBrush="#CDDC39" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
+        <Button Content="化学" HorizontalAlignment="Left" Height="89" Margin="460,179,0,0" VerticalAlignment="Top" Width="95" Click="StartChemistry" Background="#FFA000" BorderBrush="#FFA000" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
+        <Button Content="生物" Margin="570,179,0,0" HorizontalAlignment="Left" Width="95" Height="89" VerticalAlignment="Top" Click="StartBiology" Background="#795548" BorderBrush="#795548" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
+        <GroupBox Style="{x:Null}" Header="功能区" HorizontalAlignment="Left" Height="261.223" Margin="10,18,0,0" VerticalAlignment="Top" Width="162.948" Grid.Column="1" FontSize="20" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Height="32" Margin="39,103.16,0,0" VerticalAlignment="Top" Width="109.5" Grid.Column="1" Click="W_Close" FontSize="14" Background="#FF9800" BorderBrush="#FF9800"/>
+        <Button x:Name="shutdownbtn" Content="Shutdown" HorizontalAlignment="Left" Height="32" Margin="39,48,0,0" VerticalAlignment="Top" Width="109.5" Grid.Column="1" Click="shutdown" FontSize="14" Background="#9C27B0" BorderBrush="#9C27B0" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans"/>
+        <Image Margin="20,99,0,0" Source="Image/112.jpg" Stretch="Fill" HorizontalAlignment="Left" Width="25" Height="25.49" VerticalAlignment="Top" RenderTransformOrigin="0.17,0.269"/>
+        <Button Content="Settings" HorizontalAlignment="Left" Height="32" Margin="39,157.67,0,0" VerticalAlignment="Top" Width="109.5" Grid.Column="1"  FontSize="14" Background="#00BCD4" BorderBrush="#00BCD4" Click="Boot_SettingWindows" />
+        <materialDesign:Card Padding="12" Margin="14,12,0,0" Height="77">
+            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" FontFamily="Microsoft YaHei UI Light"><Run FontSize="24" Text="WeiFang Middle School" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans"/><LineBreak/><Run FontSize="18" Text="2017级21班电子多媒体索引系统_基于.net Framework构建的测试版"/></TextBlock>
         </materialDesign:Card>
-        <Path Grid.Column="1" Data="M500.68659,49.067382 L500.68659,116.51885" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="68.452" Margin="33.875,49.067,0,0" Stretch="Fill" Stroke="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" VerticalAlignment="Top" Width="1"/>
-        <materialDesign:Chip Content="MD2" HorizontalAlignment="Left" Height="39.641" Margin="41.264,143.061,0,0" VerticalAlignment="Top" Width="85.736" Grid.Column="2" Icon="G" FontFamily="./Product Sans" />
+        <materialDesign:Chip Content="Build.1989.test" HorizontalAlignment="Left" Height="40" Margin="23,228,0,0" VerticalAlignment="Top" Width="141.5" Grid.Column="1" Icon="T" FontFamily="./Product Sans" FontSize="14" />
 
     </Grid>
 </Window>
