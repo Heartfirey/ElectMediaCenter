@@ -25,12 +25,12 @@ namespace ElectMediaCenter_Project
     /// </summary>
     public partial class FileLocation : Window
     {
-        
+
 
         public void read()
         {
             IniFiles ini = new IniFiles(Directory.GetCurrentDirectory() + "\\Settings.ini");
-            
+
             if (ini.ExistINIFile())
             {
                 Storage.FileLocationStorage.MathFileLoc = ini.IniReadValue("SettingList", "MathFileLoc");
@@ -39,7 +39,7 @@ namespace ElectMediaCenter_Project
                 Storage.FileLocationStorage.PhysicalFileLoc = ini.IniReadValue("SettingList", "PhysicalFileLoc");
                 Storage.FileLocationStorage.ChemistryFileLoc = ini.IniReadValue("SettingList", "ChemistryFileloc");
                 Storage.FileLocationStorage.BiologyFileLoc = ini.IniReadValue("SettingList", "BiologyFileLoc");
-                
+               
             }
             else
             {
@@ -50,7 +50,7 @@ namespace ElectMediaCenter_Project
 
     public partial class MainWindow : Window
     {
-       
+
 
         //主窗口声明
         public MainWindow()
@@ -58,8 +58,9 @@ namespace ElectMediaCenter_Project
             InitializeComponent();
             FileLocation FileLoc = new FileLocation();
             FileLoc.read();
+            Check();
         }
-        
+
         //功能封装函数_关机指令
         private void shutdown(object sender, RoutedEventArgs e)
         {
@@ -80,7 +81,7 @@ namespace ElectMediaCenter_Project
                 p.StandardInput.WriteLine(strCMD + "&exit");
                 p.StandardInput.AutoFlush = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + "120s shutdown_test already！");
             }
@@ -99,12 +100,28 @@ namespace ElectMediaCenter_Project
             f2.Show();
         }
 
-
+        //配置文件检索
+        private void Check()
+        {
+            IniFiles ini = new IniFiles(Directory.GetCurrentDirectory() + "\\Settings.ini");
+            if (ini.ExistINIFile())
+            {
+                CheckMode.Content = "AppConfig Working Normally！" + ini.IniReadValue("ConfigInformation", "Version");
+                BitmapImage imagetemp = new BitmapImage(new Uri("pack://application:,,,/Image/checkcircle.png", UriKind.Absolute)); 
+                CheckImage.Source = imagetemp;
+            }
+            else
+            {
+                CheckMode.Content = "Error：配置文件不存在或读取异常，尝试联系管理员安装配置文件";
+                BitmapImage imagetemp = new BitmapImage(new Uri("pack://application:,,,/Image/frown.png", UriKind.Absolute));
+                CheckImage.Source = imagetemp;
+            }
+        }
 
         //索引函数
         //函数用法 System.Diagnostics.Process.Start(路径);
-        
-       
+
+
         private void StartMath(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start(Storage.FileLocationStorage.MathFileLoc);
@@ -134,8 +151,18 @@ namespace ElectMediaCenter_Project
         {
             System.Diagnostics.Process.Start(Storage.FileLocationStorage.BiologyFileLoc);
         }
-    }
-    
 
+        //使窗口可自由拖拽
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                this.DragMove();
+            }
+            catch { }
+        }
+
+        
+    }
 }
 
