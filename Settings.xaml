@@ -68,6 +68,12 @@
 
                 </Grid>
             </TabItem>
+            <TabItem Header="Test" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16">
+                <Grid Background="White">
+                    <materialDesign:Card Padding="14" Content="Local Network Communicate Client Test Sever V1.00" HorizontalAlignment="Left" Height="66" Margin="10,10,0,0" VerticalAlignment="Top" Width="984" FontSize="30"/>
+                    <Button Click="ClientReg" Content="Command：Startup Local Network Communicate Client Test Sever with safety model" HorizontalAlignment="Left" Height="33" Margin="60,92.593,0,0" VerticalAlignment="Top" Width="893" FontSize="18" Background="#FF607D8B"/>
+                </Grid>
+            </TabItem>
         </TabControl>
 
 

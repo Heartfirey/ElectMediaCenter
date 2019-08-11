@@ -72,6 +72,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CoreAudioApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>LoadLibrary\CoreAudioApi.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -103,10 +107,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Client.cs" />
     <Compile Include="IniFiles.cs" />
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Volume.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -188,6 +194,18 @@
     <Resource Include="Image\frown.png" />
     <Resource Include="Image\poweroff.png" />
     <Resource Include="Image\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\soundsize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\MainWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\international.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

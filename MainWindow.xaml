@@ -7,49 +7,93 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MaterialDesignThemes.Wpf" x:Class="ElectMediaCenter_Project.MainWindow"
         mc:Ignorable="d"
-        Title=".net framework project emc" Height="322.223" Width="894.417" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
-    <Window.TaskbarItemInfo>
-        <TaskbarItemInfo/>
-    </Window.TaskbarItemInfo>
-    <Grid Margin="0,0,2,2">
+        Title=".net framework project emc" Height="345.557" Width="906.418" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown" Unloaded="Page_Unloaded" Loaded="Page_Loaded" WindowStyle="None" BorderThickness="0">
+
+    <Grid Margin="0,0,2,-18">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="695*"/>
             <ColumnDefinition Width="201*"/>
         </Grid.ColumnDefinitions>
-        <GroupBox Style="{x:Null}" Header="课件索引区" Margin="10,182.01,10,7.213" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" RenderTransformOrigin="0.5,0.5" FontSize="20">
-            <GroupBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.171"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-0.997"/>
-                </TransformGroup>
-            </GroupBox.RenderTransform>
-        </GroupBox>
-        <Label x:Name="CheckMode" Style="{DynamicResource MaterialDesignLabel}" Content="检测机制在运行后会生效！" HorizontalAlignment="Left" Height="31" Margin="54.002,99.017,0,0" VerticalAlignment="Top" Width="632.221" Cursor="ScrollS" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-        <Button Content="数学" HorizontalAlignment="Left" Height="89" Margin="20,213.017,0,0" VerticalAlignment="Top" Width="95" Click="StartMath" Background="#FDD835" BorderBrush="#FDD835" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
-        <Button Content="语文" HorizontalAlignment="Left" Height="89" Margin="130,213.017,0,0" VerticalAlignment="Top" Width="95" Click="StartChinese" Background="#E53935" BorderBrush="#E53935" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
-        <Button Content="英语" HorizontalAlignment="Left" Height="89" Margin="240,213.017,0,0" VerticalAlignment="Top" Width="95" Click="StartEnglish" Background="#2196F3" BorderBrush="#2196F3" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
-        <Button Content="物理" HorizontalAlignment="Left" Height="89" Margin="350,213.017,0,0" VerticalAlignment="Top" Width="95" Click="StartPhysical" Background="#CDDC39" BorderBrush="#CDDC39" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
-        <Button Content="化学" HorizontalAlignment="Left" Height="89" Margin="460,213.017,0,0" VerticalAlignment="Top" Width="95" Click="StartChemistry" Background="#FFA000" BorderBrush="#FFA000" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
-        <Button Content="生物" Margin="570,213.017,0,0" HorizontalAlignment="Left" Width="95" Height="89" VerticalAlignment="Top" Click="StartBiology" Background="#795548" BorderBrush="#795548" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
-        <GroupBox Style="{x:Null}" Header="功能区" HorizontalAlignment="Left" Height="261.223" Margin="10,49,0,0" VerticalAlignment="Top" Width="180.196" Grid.Column="1" FontSize="20" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW">
+        <Grid x:Name="CheckGrid" Margin="23.335,103.019,10,210.871">
+            <Label x:Name="CheckMode" Style="{DynamicResource MaterialDesignLabel}" Content="检测机制在运行后会生效！" Height="31" VerticalAlignment="Top" Cursor="ScrollS" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Margin="34.002,0,0,0"/>
 
-        </GroupBox>
+            <Image x:Name="CheckImage" Source="Image/112.jpg" Stretch="Fill" HorizontalAlignment="Left" Width="30" Height="31" VerticalAlignment="Top" RenderTransformOrigin="0.17,0.269"/>
+        </Grid>
+        <Grid x:Name="ToolBoxGrid" Grid.Column="1" Margin="10,45,10,23.821">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="54*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Style="{x:Null}" Header="功能区" HorizontalAlignment="Left" Width="180.196" FontSize="20" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" Height="288.069" VerticalAlignment="Top" Margin="0.898,-11.333,0,0" Grid.RowSpan="2"/>
 
-        <Image x:Name="CheckImage" Margin="20,99.017,0,0" Source="Image/112.jpg" Stretch="Fill" HorizontalAlignment="Left" Width="30" Height="31" VerticalAlignment="Top" RenderTransformOrigin="0.17,0.269"/>
-        <Button Content="Exit" Height="32" Margin="68.32,172.348,22.376,0" VerticalAlignment="Top" Grid.Column="1" Click="W_Close" FontSize="14" Background="#FF9800" BorderBrush="#FF9800"/>
-        <Image HorizontalAlignment="Left" Height="28" Margin="26.653,128.679,0,0" VerticalAlignment="Top" Width="28" Source="Image/poweroff.png" Grid.Column="1"/>
-        <Button Content="Settings" HorizontalAlignment="Left" Height="32" Margin="68.319,77.687,0,0" VerticalAlignment="Top" Width="109.5" Grid.Column="1"  FontSize="14" Background="#00BCD4" BorderBrush="#00BCD4" Click="Boot_SettingWindows" />
+            <Button Content="Exit" Height="32" Margin="58.32,117.681,12.376,0" VerticalAlignment="Top" Click="W_Close" FontSize="14" Background="#FF9800" BorderBrush="#FF9800" Grid.Row="1"/>
+            <Image HorizontalAlignment="Left" Height="28" Margin="16.653,74.012,0,0" VerticalAlignment="Top" Width="28" Source="Image/poweroff.png" Grid.Row="1"/>
+            <Button Content="Settings" HorizontalAlignment="Left" Height="32" Margin="58.319,23.02,0,0" VerticalAlignment="Top" Width="109.5"  FontSize="14" Background="#00BCD4" BorderBrush="#00BCD4" Click="Boot_SettingWindows" Grid.Row="1" />
+            <materialDesign:Chip Content="Build.19811.test" HorizontalAlignment="Left" Height="40" Margin="16.653,221.364,0,0" VerticalAlignment="Top" Width="141.5" Icon="T" FontFamily="./Product Sans" FontSize="14" Grid.Row="1" />
+            <Image HorizontalAlignment="Left" Height="28" Margin="16.653,121.681,0,0" VerticalAlignment="Top" Width="28" Source="Image/close-circle.png" Grid.Row="1"/>
+            <Image HorizontalAlignment="Left" Height="28" Margin="16.653,27.685,0,0" VerticalAlignment="Top" Width="28" Source="Image/setting.png" Grid.Row="1"/>
+            <Button Content="Shutdown" Height="32" Margin="58.32,69.347,12.376,0" VerticalAlignment="Top" Click="shutdown" FontSize="14" Background="#FF9C27B0" BorderBrush="#FF9C27B0" Grid.Row="1"/>
+            <Image HorizontalAlignment="Left" Height="28" Margin="16.653,167.015,0,0" VerticalAlignment="Top" Width="28" Source="Image/international.png" Grid.Row="1"/>
+        </Grid>
         <materialDesign:Card Padding="12" Margin="10,10,10,0" Height="77">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" FontFamily="Microsoft YaHei UI Light"><Run FontSize="24" Text="WeiFang Middle School" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans"/><LineBreak/><Run FontSize="18" Text="2017级21班电子多媒体索引系统_基于.net Framework构建的测试版"/></TextBlock>
+            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" FontFamily="Microsoft YaHei UI Light" Margin="62,0,0,0"><Run FontSize="24" Text="WeiFang Middle School" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans"/><LineBreak/><Run FontSize="18" Text="2017级21班电子多媒体索引系统_基于.net Framework构建的测试版"/></TextBlock>
         </materialDesign:Card>
-        <materialDesign:Chip Content="Build.1989.test" HorizontalAlignment="Left" Height="40" Margin="36.32,258.015,0,0" VerticalAlignment="Top" Width="141.5" Grid.Column="1" Icon="T" FontFamily="./Product Sans" FontSize="14" />
-        <Button Click="W_Close" Content="X" Padding="0" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="160.196,10,0,0" VerticalAlignment="Top" Width="30" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" Background="#FFF44336" BorderBrush="#FFBDBDBD"/>
-        <Image HorizontalAlignment="Left" Height="28" Margin="26.653,176.348,0,0" VerticalAlignment="Top" Width="28" Source="Image/close-circle.png" Grid.Column="1"/>
-        <Image HorizontalAlignment="Left" Height="28" Margin="26.653,82.352,0,0" VerticalAlignment="Top" Width="28" Source="Image/setting.png" Grid.Column="1"/>
-        <Button Content="Shutdown" Height="32" Margin="68.32,124.014,22.376,0" VerticalAlignment="Top" Grid.Column="1" Click="shutdown" FontSize="14" Background="#FF9C27B0" BorderBrush="#FF9C27B0"/>
+        <Button Click="W_Close" Content="X" Padding="0" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="161.094,10,0,0" VerticalAlignment="Top" Width="30" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" Background="#FFF44336" BorderBrush="#FFBDBDBD"/>
+        <Grid x:Name="FilesButtonGrid" Margin="10,193.359,10,23.821">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="291*"/>
+                <ColumnDefinition Width="382*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="数学" HorizontalAlignment="Left" Height="89" Margin="10,31.007,0,0" VerticalAlignment="Top" Width="95" Click="StartMath" Background="#FDD835" BorderBrush="#FDD835" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
+            <Button Content="语文" HorizontalAlignment="Left" Height="89" Margin="120,31.007,0,0" VerticalAlignment="Top" Width="95" Click="StartChinese" Background="#E53935" BorderBrush="#E53935" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30"/>
+            <Button Content="英语" HorizontalAlignment="Left" Height="89" Margin="230,31.007,0,0" VerticalAlignment="Top" Width="95" Click="StartEnglish" Background="#2196F3" BorderBrush="#2196F3" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30" Grid.ColumnSpan="2"/>
+            <Button Content="物理" HorizontalAlignment="Left" Height="89" Margin="49.333,31.007,0,0" VerticalAlignment="Top" Width="95" Click="StartPhysical" Background="#CDDC39" BorderBrush="#CDDC39" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30" Grid.Column="1"/>
+            <Button Content="化学" HorizontalAlignment="Left" Height="89" Margin="159.333,31.007,0,0" VerticalAlignment="Top" Width="95" Click="StartChemistry" Background="#FFA000" BorderBrush="#FFA000" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30" Grid.Column="1"/>
+            <Button Content="生物" Margin="269.333,31.007,0,0" HorizontalAlignment="Left" Width="95" Height="89" VerticalAlignment="Top" Click="StartBiology" Background="#795548" BorderBrush="#795548" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" FontSize="30" Grid.Column="1"/>
+            <GroupBox Style="{x:Null}" Header="课件索引区" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" RenderTransformOrigin="0.5,0.5" FontSize="20" Grid.ColumnSpan="2" Height="131.077" VerticalAlignment="Top">
+                <GroupBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-0.171"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-0.997"/>
+                    </TransformGroup>
+                </GroupBox.RenderTransform>
+            </GroupBox>
+        </Grid>
+        <Grid x:Name="Volume" Margin="413.666,145.677,16.015,165.533">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="26*"/>
+                <ColumnDefinition Width="105*"/>
+            </Grid.ColumnDefinitions>
+            <Slider x:Name="VolumeControlSlider" HorizontalAlignment="Left" Height="22" Margin="37.329,10,0,0" Maximum="100" VerticalAlignment="Top" Width="225" ValueChanged="mMasterVolumeSlider_ValueChanged" Foreground="#FF00B0FF" Grid.ColumnSpan="2"/>
+            <ProgressBar x:Name="MainVolume" Minimum="0" Maximum="100" HorizontalAlignment="Right" Height="4" Margin="0,4.651,0.001,0" VerticalAlignment="Top" Width="225" RenderTransformOrigin="0.5,0.5" Background="#FF9E9E9E" BorderBrush="#FF9E9E9E" Foreground="#FF00E676" Grid.ColumnSpan="2">
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+            <Image Margin="-0.616,0.173,21.338,12.173" Source="Image/soundsize.png" Stretch="Fill" Width="32" Height="32"/>
+        </Grid>
+        <Grid x:Name="TimeDispayGrid" Margin="20.656,146.022,314.898,0" Height="44.002" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="344*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="TimeDisplay" Content="TimeDisplay:程序在执行后可生效！" HorizontalAlignment="Left" Height="32" Margin="21.983,3.834,-2.408,0" VerticalAlignment="Top" Width="324.667" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16" Grid.RowSpan="3" FontWeight="Bold" Grid.Column="1"/>
+            <Image Margin="0.258,2.5,0,9.502" Source="Image/Clock.png" Stretch="Fill" Width="32" Height="32" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalAlignment="Left"/>
+        </Grid>
+        <Image Margin="16.654,19.355,619.567,271.199" Source="Image/MainWindow.png" Stretch="Fill" Width="56" Height="58"/>
     </Grid>
 
 </Window>

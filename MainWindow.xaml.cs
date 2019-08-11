@@ -17,6 +17,9 @@ using System.Data;
 using System.Drawing;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Threading;
+using Volume;
+using CoreAudioApi;
 
 namespace ElectMediaCenter_Project
 {
@@ -39,7 +42,8 @@ namespace ElectMediaCenter_Project
                 Storage.FileLocationStorage.PhysicalFileLoc = ini.IniReadValue("SettingList", "PhysicalFileLoc");
                 Storage.FileLocationStorage.ChemistryFileLoc = ini.IniReadValue("SettingList", "ChemistryFileloc");
                 Storage.FileLocationStorage.BiologyFileLoc = ini.IniReadValue("SettingList", "BiologyFileLoc");
-               
+                Storage.FileLocationStorage.IP_dress = ini.IniReadValue("ConfigInformation", "SeverIP");
+
             }
             else
             {
@@ -59,7 +63,12 @@ namespace ElectMediaCenter_Project
             FileLocation FileLoc = new FileLocation();
             FileLoc.read();
             Check();
+            InitializeAudioControl();
+            
+            
         }
+
+        private DispatcherTimer timer;
 
         //功能封装函数_关机指令
         private void shutdown(object sender, RoutedEventArgs e)
@@ -117,6 +126,71 @@ namespace ElectMediaCenter_Project
                 CheckImage.Source = imagetemp;
             }
         }
+
+        //载入线程
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            volumeControlTimer.Start();
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+        }
+        //结束线程
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            volumeControlTimer.Stop();
+        }
+
+        //音量控制
+        private Volume.VolumeControl volumeControl;
+        private bool isUserChangeVolume = true;
+        private DispatcherTimer volumeControlTimer;
+
+        //时间显示事件
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            TimeDisplay.Content = DateTime.Now.ToString();
+        }
+
+
+        private void InitializeAudioControl()
+        {
+            volumeControl = VolumeControl.Instance;
+            volumeControl.OnAudioNotification += volumeControl_OnAudioNotification;
+            volumeControl_OnAudioNotification(null, new AudioNotificationEventArgs() { MasterVolume = volumeControl.MasterVolume });
+
+            volumeControlTimer = new DispatcherTimer();
+            volumeControlTimer.Interval = TimeSpan.FromTicks(150);
+            volumeControlTimer.Tick += volumeControlTimer_Tick;
+        }
+
+        void volumeControl_OnAudioNotification(object sender, AudioNotificationEventArgs e)
+        {
+            this.isUserChangeVolume = false;
+            try
+            {
+                this.Dispatcher.Invoke(new Action(() => { VolumeControlSlider.Value = e.MasterVolume; }));
+            }
+            catch { }
+            this.isUserChangeVolume = true;
+        }
+
+        void volumeControlTimer_Tick(object sender, EventArgs e)
+        {
+            double[] information = volumeControl.AudioMeterInformation;
+            MainVolume.Value = information[0];
+            
+        }
+
+        private void mMasterVolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (isUserChangeVolume)
+            {
+                volumeControl.MasterVolume = VolumeControlSlider.Value;
+            }
+        }
+
 
         //索引函数
         //函数用法 System.Diagnostics.Process.Start(路径);

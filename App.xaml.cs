@@ -32,5 +32,6 @@ namespace Storage
         public static string PhysicalFileLoc;
         public static string ChemistryFileLoc;
         public static string BiologyFileLoc;
+        public static string IP_dress;
     }
 }

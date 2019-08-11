@@ -113,6 +113,12 @@ namespace ElectMediaCenter_Project
             ChemistryBox.Text = Storage.FileLocationStorage.ChemistryFileLoc;
             BiologyBox.Text = Storage.FileLocationStorage.BiologyFileLoc;
         }
+
+        private void ClientReg(object sender, RoutedEventArgs e)
+        {
+            Client.MyClient mc = new Client.MyClient();
+            mc.StarUp();
+        }
     }
 }
 
