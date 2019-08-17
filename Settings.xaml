@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MaterialDesignThemes.Wpf" x:Class="ElectMediaCenter_Project.Settings"
         mc:Ignorable="d"
-        Title="Settings" Height="598.343" Width="1050">
+        Title="Settings" Height="603.01" Width="1050">
 
     <Grid Margin="0,0,0,1">
         <Grid.ColumnDefinitions>
@@ -34,6 +34,22 @@
                     <Image HorizontalAlignment="Left" Height="248" Margin="5,11,0,0" VerticalAlignment="Top" Width="257" Source="Image/Computer.png" Grid.ColumnSpan="2"/>
                     <Button Content="访问GitHub项目主页" Grid.Column="2" HorizontalAlignment="Left" Height="36" Margin="486.949,231,0,0" VerticalAlignment="Top" Width="181" Background="RoyalBlue" BorderBrush="RoyalBlue" Click="Visit_ProjectWeb" FontSize="16"/>
                     <materialDesign:Card Padding="10" Content="Build by SpaceSoftware 心火&#xD;&#xA;&#xD;&#xA;Space 空间技术_开发组  2019.8.9" Height="111" Margin="10,301.936,10,0" VerticalAlignment="Top" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="20" Grid.ColumnSpan="3"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Common" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16">
+                <Grid Background="White" Margin="10,6.334,4.667,7.666">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="143*"/>
+                        <ColumnDefinition Width="344*"/>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:Card Content="ElectMediaCenter：CommonSettings"  Padding="8" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" HorizontalAlignment="Left" Height="45" Margin="10,10,0,0" VerticalAlignment="Top" Width="969" FontSize="22" Grid.ColumnSpan="3"/>
+                    <CheckBox x:Name="SelfRunningCheckBox" Grid.ColumnSpan="2" Content="开机自启动" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="0,112,0,0" VerticalAlignment="Top" Width="424" FontSize="16" Checked="SelfRunningCheckBox_Checked" Unchecked="SelfRunningCheckBox_Unchecked"/>
+                    <Label Content="电子多媒体辅助系统设置：" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="0,78,0,0" VerticalAlignment="Top" Width="272" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="18" FontWeight="Bold"/>
+                    <TextBox x:Name="ScanAppBox" HorizontalAlignment="Left" Height="38" Margin="62,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="788" Text="ScanApp：No Settings" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16" />
+                    <Button Content="选择" Click="ScanAppChooseFiles" HorizontalAlignment="Left" Height="25" Margin="574,166,0,0" VerticalAlignment="Top" Width="91" Background="#FFFDD835" BorderBrush="#FFFDD835" FontFamily="Microsoft YaHei UI" Foreground="#DD0C0000" Grid.Column="2"/>
+                    <Label Content="扫描仪：" HorizontalAlignment="Left" Height="29" Margin="10,162,0,0" VerticalAlignment="Top" Width="82" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2"/>
+
                 </Grid>
             </TabItem>
             <TabItem Header="FileLocationSet" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16">
@@ -70,8 +86,12 @@
             </TabItem>
             <TabItem Header="Test" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16">
                 <Grid Background="White">
-                    <materialDesign:Card Padding="14" Content="Local Network Communicate Client Test Sever V1.00" HorizontalAlignment="Left" Height="66" Margin="10,10,0,0" VerticalAlignment="Top" Width="984" FontSize="30"/>
-                    <Button Click="ClientReg" Content="Command：Startup Local Network Communicate Client Test Sever with safety model" HorizontalAlignment="Left" Height="33" Margin="60,92.593,0,0" VerticalAlignment="Top" Width="893" FontSize="18" Background="#FF607D8B"/>
+                    <materialDesign:Card Padding="14" Content="         Local Network Communicate Client Test Sever V1.00" HorizontalAlignment="Left" Height="66" Margin="10,10,0,0" VerticalAlignment="Top" Width="984" FontSize="30"/>
+                    <Button x:Name="SLNC" Click="ClientReg" Content="Command：Startup Local Network Communicate Client Test Sever with safety model" HorizontalAlignment="Left" Height="33" Margin="60,92.593,0,0" VerticalAlignment="Top" Width="893" FontSize="18" Background="#FF607D8B"/>
+                    <Image HorizontalAlignment="Left" Height="49" Margin="23,18,0,0" VerticalAlignment="Top" Width="49" Source="Image/international.png"/>
+                    <TextBox x:Name="MessageIputBox" HorizontalAlignment="Left" Height="34" Margin="27,189,0,0" TextWrapping="Wrap" Text="Please input your messeage" VerticalAlignment="Top" Width="867"/>
+                    <Label x:Name="Label" Content="向服务器发送信息" HorizontalAlignment="Left" Height="35" Margin="23,154,0,0" VerticalAlignment="Top" Width="275"/>
+                    <Button x:Name="Send" Content="Send" HorizontalAlignment="Left" Height="34" Margin="899,189,0,0" VerticalAlignment="Top" Width="83" Click="SendMessage"/>
                 </Grid>
             </TabItem>
         </TabControl>

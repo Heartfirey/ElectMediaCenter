@@ -42,13 +42,14 @@ namespace ElectMediaCenter_Project
                 Storage.FileLocationStorage.PhysicalFileLoc = ini.IniReadValue("SettingList", "PhysicalFileLoc");
                 Storage.FileLocationStorage.ChemistryFileLoc = ini.IniReadValue("SettingList", "ChemistryFileloc");
                 Storage.FileLocationStorage.BiologyFileLoc = ini.IniReadValue("SettingList", "BiologyFileLoc");
-                Storage.FileLocationStorage.IP_dress = ini.IniReadValue("ConfigInformation", "SeverIP");
+                Storage.FileLocationStorage.IP_dress = ini.IniReadValue("CommonSettings", "SeverIP");
+                Storage.CommonSettingStorage.ScanAppFileLoc = ini.IniReadValue("CommonSettings", "ScanAppFileLoc");
 
-            }
+            }//读取文件目录到全局变量
             else
             {
                 MessageBox.Show("配置错误", "未检索到配置文件,请联系管理员申请配置", MessageBoxButton.OK);
-            }
+            }//提示用户没有配置文件
         }
     }
 
@@ -60,12 +61,10 @@ namespace ElectMediaCenter_Project
         public MainWindow()
         {
             InitializeComponent();
+            InitializeAudioControl();
             FileLocation FileLoc = new FileLocation();
             FileLoc.read();
             Check();
-            InitializeAudioControl();
-            
-            
         }
 
         private DispatcherTimer timer;
@@ -131,6 +130,17 @@ namespace ElectMediaCenter_Project
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             volumeControlTimer.Start();
+            IniFiles ini = new IniFiles(Directory.GetCurrentDirectory() + "\\Settings.ini");
+            
+            if (ini.IniReadValue("ConfigInformation", "Severload") == "1")
+            {
+                Client.MyClient mc = new Client.MyClient();
+                mc.StarUp();
+            }
+
+            
+
+
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += new EventHandler(timer_Tick);
@@ -224,6 +234,11 @@ namespace ElectMediaCenter_Project
         private void StartBiology(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start(Storage.FileLocationStorage.BiologyFileLoc);
+        }
+
+        private void StartScanApp(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Storage.CommonSettingStorage.ScanAppFileLoc);
         }
 
         //使窗口可自由拖拽

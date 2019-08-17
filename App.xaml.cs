@@ -34,4 +34,10 @@ namespace Storage
         public static string BiologyFileLoc;
         public static string IP_dress;
     }
+
+    public partial class CommonSettingStorage
+    {
+        public static bool IsSelfRunning = false;
+        public static string ScanAppFileLoc;
+    }
 }

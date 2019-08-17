@@ -34,7 +34,8 @@
             <Image HorizontalAlignment="Left" Height="28" Margin="16.653,121.681,0,0" VerticalAlignment="Top" Width="28" Source="Image/close-circle.png" Grid.Row="1"/>
             <Image HorizontalAlignment="Left" Height="28" Margin="16.653,27.685,0,0" VerticalAlignment="Top" Width="28" Source="Image/setting.png" Grid.Row="1"/>
             <Button Content="Shutdown" Height="32" Margin="58.32,69.347,12.376,0" VerticalAlignment="Top" Click="shutdown" FontSize="14" Background="#FF9C27B0" BorderBrush="#FF9C27B0" Grid.Row="1"/>
-            <Image HorizontalAlignment="Left" Height="28" Margin="16.653,167.015,0,0" VerticalAlignment="Top" Width="28" Source="Image/international.png" Grid.Row="1"/>
+            <Image HorizontalAlignment="Left" Height="28" Margin="17,170,0,0" VerticalAlignment="Top" Width="28" Source="Image/international.png" Grid.Row="1"/>
+            <Button Content="扫描仪" Height="32" Margin="58,167,13,0" VerticalAlignment="Top" Click="StartScanApp" FontSize="14" Background="#FF9800" BorderBrush="#FF9800" Grid.Row="1"/>
         </Grid>
         <materialDesign:Card Padding="12" Margin="10,10,10,0" Height="77">
             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" FontFamily="Microsoft YaHei UI Light" Margin="62,0,0,0"><Run FontSize="24" Text="WeiFang Middle School" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans"/><LineBreak/><Run FontSize="18" Text="2017级21班电子多媒体索引系统_基于.net Framework构建的测试版"/></TextBlock>
@@ -78,7 +79,7 @@
                     </TransformGroup>
                 </ProgressBar.RenderTransform>
             </ProgressBar>
-            <Image Margin="-0.616,0.173,21.338,12.173" Source="Image/soundsize.png" Stretch="Fill" Width="32" Height="32"/>
+            <Image Source="Image/soundsize.png" Stretch="Fill" Width="32" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         </Grid>
         <Grid x:Name="TimeDispayGrid" Margin="20.656,146.022,314.898,0" Height="44.002" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
@@ -93,7 +94,7 @@
             <Label x:Name="TimeDisplay" Content="TimeDisplay:程序在执行后可生效！" HorizontalAlignment="Left" Height="32" Margin="21.983,3.834,-2.408,0" VerticalAlignment="Top" Width="324.667" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16" Grid.RowSpan="3" FontWeight="Bold" Grid.Column="1"/>
             <Image Margin="0.258,2.5,0,9.502" Source="Image/Clock.png" Stretch="Fill" Width="32" Height="32" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalAlignment="Left"/>
         </Grid>
-        <Image Margin="16.654,19.355,619.567,271.199" Source="Image/MainWindow.png" Stretch="Fill" Width="56" Height="58"/>
+        <Image Margin="18,23,0,0" Source="Image/MainWindow.png" Stretch="Fill" Width="56" Height="58" VerticalAlignment="Top" HorizontalAlignment="Left"/>
     </Grid>
 
 </Window>
