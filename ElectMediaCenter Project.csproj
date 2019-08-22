@@ -71,6 +71,9 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Image\Educate.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CoreAudioApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
@@ -234,10 +237,10 @@
     <Resource Include="Image\FileLocPNG.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="EditSave.png" />
+    <Resource Include="Image\Development.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\Development.png" />
+    <Resource Include="Image\Educate.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

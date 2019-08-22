@@ -39,7 +39,7 @@
             <Button Content="扫描仪" Height="32" Margin="57.653,122,13.347,0" VerticalAlignment="Top" Click="StartScanApp" FontSize="14" Background="#FFE91E63" BorderBrush="#FFE91E63" Grid.Row="1"/>
         </Grid>
         <materialDesign:Card Padding="12" Margin="10,10,10,0" Height="77">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" FontFamily="Microsoft YaHei UI Light" Margin="67,0,-5,0"><Run FontSize="24" Text="WeiFang Middle School" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans"/><LineBreak/><Run FontSize="18" Text="2017级21班电子多媒体索引系统_基于.net Framework构建的测试版"/></TextBlock>
+            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" FontFamily="Microsoft YaHei UI Light" Margin="67,0,-5,0"><Run FontSize="24" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" Text="WeiFang Middle School"/><LineBreak/><Run FontSize="18" Text="2017级21班电子多媒体"/><Run FontSize="18" Text="辅助"/><Run FontSize="18" Text="系统_基于.net Framework构建的测试版"/></TextBlock>
         </materialDesign:Card>
         <Button Click="W_Close" Content="X" Padding="0" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="161.094,10,0,0" VerticalAlignment="Top" Width="30" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" Background="#FFF44336" BorderBrush="#FFBDBDBD"/>
         <Grid x:Name="FilesButtonGrid" Margin="10,193.359,10,23.821">
