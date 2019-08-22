@@ -37,7 +37,6 @@ namespace Storage
 
     public partial class CommonSettingStorage
     {
-        public static bool IsSelfRunning = false;
         public static string ScanAppFileLoc;
     }
 }

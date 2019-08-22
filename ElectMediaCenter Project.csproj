@@ -218,5 +218,26 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ScanApp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Comlile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\SeverLoc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\SettingTitleImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\FileLocPNG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="EditSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Development.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

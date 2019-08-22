@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MaterialDesignThemes.Wpf" x:Class="ElectMediaCenter_Project.Settings"
         mc:Ignorable="d"
-        Title="Settings" Height="603.01" Width="1050">
+        Title="Settings" Height="610.343" Width="1054.667">
 
     <Grid Margin="0,0,0,1">
         <Grid.ColumnDefinitions>
@@ -18,9 +18,16 @@
             <ColumnDefinition Width="205*"/>
         </Grid.ColumnDefinitions>
 
-        <materialDesign:Card Padding="16" Margin="16,16,16,0" Grid.ColumnSpan="5" Height="57.4">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans"><Run Text="ElectMediaCenter Insider Preview Version：Build 19.731"/></TextBlock>
-        </materialDesign:Card>
+        <Grid x:Name="TitleGird" Grid.ColumnSpan="5" Margin="16,16,16,497.61">
+
+            <materialDesign:Card Padding="16" Height="57.4">
+                <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" Margin="42,0,6.667,0"><Run Text="ElectMediaCenter Insider Preview Version：Build "/><Run Text="0.9.9.7"/></TextBlock>
+            </materialDesign:Card>
+
+            <Image HorizontalAlignment="Right" Height="40" Margin="0,8.259,963,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="-0.46,-8.804" Source="Image/SettingTitleImage.png"/>
+
+
+        </Grid>
 
         <TabControl Grid.ColumnSpan="5" HorizontalAlignment="Left" Height="468.343" Margin="16,88,0,0" VerticalAlignment="Top" Width="1010">
             <TabItem Header="About" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16">
@@ -30,10 +37,13 @@
                         <ColumnDefinition Width="143*"/>
                         <ColumnDefinition Width="344*"/>
                     </Grid.ColumnDefinitions>
-                    <materialDesign:Card Grid.ColumnSpan="2" Padding="10" Content="Insider Preview Version 2019.8.9&#xA;下一版本：1.全新Material Design界面设计 &#xA;                 2.绑定扫描仪数据库&#xA;                 3.内存优化，碎片函数重写处理&#xA;                 4.准备开发嵌入式套件-①Space Media Player 媒体播放器&#xA;                 5.整理Bug_Report" Height="178" Margin="252,31,10,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI Light" FontSize="20" Grid.Column="1"/>
+                    <materialDesign:Card Grid.ColumnSpan="2" Padding="10" Content="Insider Preview Version 0.9.9.7&#xA;下一版本：1.全新Material Design界面设计 &#xD;&#xA;                 2.局域网通信完善&#xA;                 3.内存优化，启动速度优化&#xA;                 4.准备开发嵌入式套件-①Space Media Player 媒体播放器&#xA;                 5.整理Bug_Report" Height="178" Margin="252,31,10,0" VerticalAlignment="Top" FontFamily="Microsoft YaHei UI Light" FontSize="20" Grid.Column="1"/>
                     <Image HorizontalAlignment="Left" Height="248" Margin="5,11,0,0" VerticalAlignment="Top" Width="257" Source="Image/Computer.png" Grid.ColumnSpan="2"/>
                     <Button Content="访问GitHub项目主页" Grid.Column="2" HorizontalAlignment="Left" Height="36" Margin="486.949,231,0,0" VerticalAlignment="Top" Width="181" Background="RoyalBlue" BorderBrush="RoyalBlue" Click="Visit_ProjectWeb" FontSize="16"/>
-                    <materialDesign:Card Padding="10" Content="Build by SpaceSoftware 心火&#xD;&#xA;&#xD;&#xA;Space 空间技术_开发组  2019.8.9" Height="111" Margin="10,301.936,10,0" VerticalAlignment="Top" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="20" Grid.ColumnSpan="3"/>
+                    <Grid x:Name="About" Grid.ColumnSpan="3" Margin="10,301.936,10,10">
+                        <materialDesign:Card Padding="10" Content="                     Build by SpaceSoftware 心火&#xA;&#xA;                     Space 空间技术_开发组  2019.8.9" Height="111" VerticalAlignment="Top" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="20"/>
+                        <Image HorizontalAlignment="Left" Height="80" Margin="7.663,9.331,0,0" VerticalAlignment="Top" Width="80" Source="Image/Development.png"/>
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Common" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16">
@@ -44,11 +54,22 @@
                         <ColumnDefinition Width="344*"/>
                     </Grid.ColumnDefinitions>
                     <materialDesign:Card Content="ElectMediaCenter：CommonSettings"  Padding="8" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" HorizontalAlignment="Left" Height="45" Margin="10,10,0,0" VerticalAlignment="Top" Width="969" FontSize="22" Grid.ColumnSpan="3"/>
-                    <CheckBox x:Name="SelfRunningCheckBox" Grid.ColumnSpan="2" Content="开机自启动" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="0,112,0,0" VerticalAlignment="Top" Width="424" FontSize="16" Checked="SelfRunningCheckBox_Checked" Unchecked="SelfRunningCheckBox_Unchecked"/>
-                    <Label Content="电子多媒体辅助系统设置：" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="0,78,0,0" VerticalAlignment="Top" Width="272" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="18" FontWeight="Bold"/>
-                    <TextBox x:Name="ScanAppBox" HorizontalAlignment="Left" Height="38" Margin="62,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="788" Text="ScanApp：No Settings" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16" />
-                    <Button Content="选择" Click="ScanAppChooseFiles" HorizontalAlignment="Left" Height="25" Margin="574,166,0,0" VerticalAlignment="Top" Width="91" Background="#FFFDD835" BorderBrush="#FFFDD835" FontFamily="Microsoft YaHei UI" Foreground="#DD0C0000" Grid.Column="2"/>
-                    <Label Content="扫描仪：" HorizontalAlignment="Left" Height="29" Margin="10,162,0,0" VerticalAlignment="Top" Width="82" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    <CheckBox x:Name="SelfRunningCheckBox" Grid.ColumnSpan="2" Content="开机自启动" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="29,121.003,0,0" VerticalAlignment="Top" Width="424" FontSize="16" Checked="SelfRunningCheckBox_Checked" Unchecked="SelfRunningCheckBox_Unchecked"/>
+                    <Label Content="电子多媒体辅助系统设置：" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="29,87.003,0,0" VerticalAlignment="Top" Width="272" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="ScanAppBox" HorizontalAlignment="Left" Height="38" Margin="29,202.003,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="693.333" Text="ScanApp：No Settings" Grid.ColumnSpan="2" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16" Grid.Column="1" />
+                    <Button Content="选择" Click="ScanAppChooseFiles" HorizontalAlignment="Left" Height="27.667" Margin="451.333,212.336,0,0" VerticalAlignment="Top" Width="75.666" Background="#FFFF3D00" BorderBrush="#FFFF3D00" FontFamily="Microsoft YaHei UI" Foreground="#DDFFFFFF" Grid.Column="2"/>
+                    <Label Content="扫描仪：" HorizontalAlignment="Left" Height="29" Margin="29,168.003,0,0" VerticalAlignment="Top" Width="82" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="18" FontWeight="Bold" Grid.Column="1"/>
+                    <Image Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="40" Margin="12.562,81.003,0,0" VerticalAlignment="Top" Width="40" Source="Image/Comlile.png"/>
+                    <Image Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="40" Margin="13.562,163.003,0,0" VerticalAlignment="Top" Width="40" Source="Image/ScanApp.png"/>
+                    <Image Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="40" Margin="13.562,257.003,0,0" VerticalAlignment="Top" Width="40" Source="Image/SeverLoc.png" RenderTransformOrigin="0.561,1.656"/>
+                    <Label Content="局域网服务器IP设置：" HorizontalAlignment="Left" Height="29" Margin="29,264.003,0,0" VerticalAlignment="Top" Width="185" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="18" FontWeight="Bold" Grid.Column="1"/>
+                    <TextBox x:Name="SeverIPEdit" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="29,298.003,0,0" TextWrapping="Wrap" Text="Example：192.168.0.0" VerticalAlignment="Top" Width="330.438"/>
+                    <Grid x:Name="IPAddress" Grid.Column="1" Margin="22.997,317.664,673.653,79.263" Grid.ColumnSpan="2">
+                        <Label Content="本地IP：" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="59.894" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="14" Margin="0,6.003,0,-5.994"/>
+                        <Label x:Name="IPAddress1" Content="Please Run the Application !" HorizontalAlignment="Left" Height="26" Margin="59.894,6.003,0,-5.994" VerticalAlignment="Top" Width="203.227" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="14"/>
+
+                    </Grid>
+                    <Button Content="Save" Grid.Column="2" HorizontalAlignment="Left" Height="51.673" Margin="90.283,298.003,0,0" VerticalAlignment="Top" Width="67.999" Background="#FF1DE9B6" BorderBrush="#FF1DE9B6"/>
 
                 </Grid>
             </TabItem>
@@ -67,7 +88,6 @@
                     <TextBox x:Name="PhysicalBox" HorizontalAlignment="Left" Height="38.067" Margin="70,223.959,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="788" Text="Physical：No Settings" Grid.Column="3" Grid.ColumnSpan="2" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16"/>
                     <TextBox x:Name="ChemistryBox" HorizontalAlignment="Left" Height="38.066" Margin="70,267.026,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="788" Text="Chemistry：No Settings" Grid.Column="3" Grid.ColumnSpan="2" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16"/>
                     <TextBox x:Name="BiologyBox" HorizontalAlignment="Left" Height="38.066" Margin="70,310.092,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="788" Text="Biology：No Settings" Grid.Column="3" Grid.ColumnSpan="2" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="16"/>
-                    <materialDesign:Card Content="ElectMediaCenter文件指向目录设置"  Padding="10" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" HorizontalAlignment="Left" Height="65" Margin="1,15,0,0" VerticalAlignment="Top" Width="966" FontSize="36" Grid.Column="3" Grid.ColumnSpan="2"/>
                     <Button Content="选择" Click="MathChooseFiles" HorizontalAlignment="Left" Height="25" Margin="707,106.553,0,0" VerticalAlignment="Top" Width="91" Background="#FFFDD835" BorderBrush="#FFFDD835" FontFamily="Microsoft YaHei UI" Foreground="#DD0C0000" Grid.Column="4"/>
                     <Button Content="选择" Click="ChineseChooseFiles" HorizontalAlignment="Left" Height="25" Margin="707,150.892,0,0" VerticalAlignment="Top" Width="91" Background="#FFE53935" BorderBrush="#FFE53935" FontFamily="Microsoft YaHei UI" Foreground="#DD0C0000" Grid.Column="4"/>
                     <Button Content="选择" Click="EnglishChooseFiles"  HorizontalAlignment="Left" Height="25" Margin="707,192.686,0,0" VerticalAlignment="Top" Width="91" Background="#FF2196F3" BorderBrush="#FF2196F3" FontFamily="Microsoft YaHei UI" Foreground="#DD0C0000" Grid.Column="4"/>
@@ -81,6 +101,12 @@
                     <Label Content="物理：" Grid.Column="3" HorizontalAlignment="Left" Height="29" Margin="15,232,0,0" VerticalAlignment="Top" Width="55" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="18" FontWeight="Bold"/>
                     <Label Content="化学：" Grid.Column="3" HorizontalAlignment="Left" Height="29" Margin="15,275,0,0" VerticalAlignment="Top" Width="55" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="18" FontWeight="Bold"/>
                     <Label Content="生物：" Grid.Column="3" HorizontalAlignment="Left" Height="29" Margin="15,319,0,0" VerticalAlignment="Top" Width="55" FontFamily="/ElectMediaCenter Project;component/Fonts/#Product Sans" FontSize="18" FontWeight="Bold"/>
+                    <Grid x:Name="FileLocTitle" Grid.ColumnSpan="2" Grid.Column="3" Margin="1,15,15,358.936">
+                        <materialDesign:Card Content="      ElectMediaCenter文件指向目录设置"  Padding="10" FontFamily="/ElectMediaCenter Project;component/Fonts/#FZSJ-DQYBKSJW" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="966" FontSize="36"/>
+                        <Image HorizontalAlignment="Left" Height="50" Margin="5.665,6.258,0,0" VerticalAlignment="Top" Width="50" Source="Image/FileLocPNG.png"/>
+
+                    </Grid>
+                    <Image HorizontalAlignment="Left" Height="45" Margin="596.665,378.436,0,0" VerticalAlignment="Top" Width="45" Source="EditSave.png" Grid.Column="4"/>
 
                 </Grid>
             </TabItem>
